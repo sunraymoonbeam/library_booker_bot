@@ -2,7 +2,9 @@
 A simple Selenium bot project designed to automate the booking of university library resources.
 
 ## Project Motivation
-When I couldn't secure student lodging, studying became nearly impossible at home, where I lacked a private room. Unable to find space even in a friend's cramped dorm, I resorted to daily trips to the library since I didn't want my grades to suffer. Booking a study slot with a monitor was tough due to strict rules. Frustrated with others snatching away my much-needed monitor (a essential for a CS student), I developed an automated booking solution using Selenium with multiple accounts and deployed it on Heroku.
+When I couldn't secure student lodging, studying became nearly impossible at home, where I lacked a private room. Unable to find space even in a friend's cramped dorm, I resorted to daily trips to the library since I didn't want my grades to suffer. 
+
+Booking a study slot with a monitor was tough due to strict rules. Frustrated with others snatching away my much-needed monitor (a essential for a CS student), I developed an automated booking solution using Selenium with multiple accounts and deployed it on Heroku.
 
 Was it fair to other students? No. Did it teach me a lot about Selenium and OOP? Yes. Did it save my grades? Not really, no. But it was fun.
 
