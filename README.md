@@ -1,20 +1,10 @@
-# Booking Bot Project
+# Library Booker Bot
+A simple Selenium bot project designed to automate the booking of university library resources.
 
-## Project Overview
+## Project Motivation
+When I couldn't secure student lodging, studying became nearly impossible at home, where I lacked a private room. Unable to find space even in a friend's cramped dorm, I resorted to daily trips to the library since I didn't want my grades to suffer. Booking a study slot with a monitor was tough due to strict rules. Frustrated with others snatching away my much-needed monitor (a essential for a CS student), I developed an automated booking solution using Selenium with multiple accounts and deployed it on Heroku.
 
-This project automates the process of booking resources online. It includes a main script that orchestrates the booking process, configurations for customizing resource bookings, and a set of utilities to support web scraping and interaction.
-
-When I couldn't secure student lodging, it became a huge problem for me. My home was not conducive for studying AT ALL, as I didn't have my own room, and my grades were at risk of nose-diving into the ground. Staying in a friend's dorm didn't help due to limited space, so I was forced to go to the library daily. Booking a study slot with a provided monitor there was challenging due to several limitations which helped to ensure fairness:
-
-* Only one slot could be booked at a time for up to 2 hours.
-* Booking was only allowed on the same day.
-* A confirmation code obtained from your email had to be typed in.
-
-Frustrated with others snatching away my much-needed monitor (CS student problems), I developed a solution to automatically book all the slots for that monitor seat using multiple of my friend's accounts. This script can be deployed on Heroku and automated to run at the start of each day, ensuring a smooth, uninterrupted study session at the library.
-
-Was it fair to other students? No. But did it teach me a lot about Selenium and OOP? Yes. Did it save my grades? Absolutely.
-
-Always remember to have fun!
+Was it fair to other students? No. Did it teach me a lot about Selenium and OOP? Yes. Did it save my grades? Not really, no. But it was fun.
 
 ## Project Structure
 ```
@@ -32,7 +22,6 @@ Always remember to have fun!
     ├── scrapper_bot.py # Contains logic for scraping web pages to find available resources. 
     └── utils.py # Utility functions used across the project, e.g., initializtion of drivers and logging of booking metadata.
 ```
-
 
 ## Installation Steps
 
@@ -65,25 +54,26 @@ times:
 output_folder: "bookings"
 ```
 
-Create a .env file in the root directory of your project to store sensitive information such as credentials. This file should not be committed to version control. Add the following lines to your .env file, replacing your_username and your_password with your actual login credentials:
+Create a .env file in the root directory of your project to store sensitive information such as credentials. This file should NOT be committed to version control. Add the following lines to your .env file, replacing your_username and your_password with your actual login credentials:
 
-```CREDENTIALS={"username": "password"}```
+```CREDENTIALS={"username": "password", "username2": "password2", ...}```
 
 5. **Running the Application**
-   - From the project root directory, run `python main.py` to start the bot.
+   *Local* - From the project root directory, run `python main.py` to start the bot.
 
 ## Classes and Modules
 
-- **base_web_bot.py**: This class serves as a foundation for any web bot, providing common functionalities such as initiating a web driver, navigating pages, and handling web elements.
+- `**WebBot**`: This class serves as a foundation for any web bot, providing common functionalities such as initiating a web driver, navigating pages, and handling web elements.
+  
+- `**ScrapperBot**`: Also extends `WebBot`, focused on scraping web pages to gather information about available resources, which can then be used by `BookingBot`.
 
-- **booking_bot.py**: Extends `base_web_bot.py` to implement the booking process. It includes methods for logging in to websites, finding available resources, and completing the booking process.
-
-- **scrapper_bot.py**: Also extends `base_web_bot.py`, focused on scraping web pages to gather information about available resources, which can then be used by `booking_bot.py`.
+- `**BookingBot**`: Extends `WebBot` to implement the booking process. It includes methods for logging in to websites, finding available resources, and completing the booking process.
 
 - **utils.py**: Contains utility functions that support the bots' operations, including initializtion of drivers and logging of booking metadata.
 
 ## Future Work
-1. Implement functionality to retrieve confirmation codes from emails and input them directly to secure the booking slot (currently limited by Azure authentication protocols).
-2. Send confirmation/summary of booked resources to Gmail.
-3. Conduct another round of testing with Heroku.
-4. Integrate a Telegram bot to enhance the ability to select and filter resources.
+1. Conduct another round of testing with Heroku.
+2. Dockerize it. 
+3. Implement functionality to retrieve confirmation codes from emails and input them directly to secure the booking slot (currently limited by Azure authentication protocols).
+4. Send confirmation/summary of booked resources to Gmail.
+5. Integrate a Telegram bot to enhance the ability to select and filter resources.
