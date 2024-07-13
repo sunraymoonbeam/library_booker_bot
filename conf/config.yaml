@@ -1,0 +1,13 @@
+login_url: "https:myspace.com"
+
+location:  "XX XX Library"
+
+resource_category: "XXXX Resource"
+
+preferred_resource_id: "XXXX"
+
+times:
+  start: "0800"  # Start time as a string in 24-hour format
+  end: "1800"    # End time as a string in 24-hour format
+
+output_folder: "bookings"

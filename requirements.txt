@@ -1,0 +1,6 @@
+selenium
+selenium-stealth
+webdriver-manager
+python-dotenv
+hydra-core
+omegaconf
